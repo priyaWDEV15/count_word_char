@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+	
+	<style >
+
+		*{padding:0;margin:0; }
+		
+		.wrapper{
+			height: 300px;
+			width:  800px;
+		
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+
+		}
+		textarea{
+			height: 250px;
+			width: 100%;
+			font-size: 25px;
+			resize: none;
+			border: 2px solid black;
+			padding: 2px;
+		}
+		button{
+			height: 40px;
+			width: 200px;
+			margin-left: 300px;
+			cursor: pointer;
+			background: red;
+			border: none;
+			border-radius: 25px;
+			font-size: 20px;
+			color: white;
+		}	
+		p{
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="wrapper">
+		<textarea id="input" ></textarea>
+		<button onclick="calculate()">Calculate</button>
+		<br>
+		<br>
+		<p id="output1"></p>
+		<p id="output2"></p>
+	</div>
+<script>
+	const calculate = () => {
+		let input=document.getElementById('input').value;
+		let noc= input.length;
+		let output1= document.getElementById('output1').innerHTML ="Total Characters =" +noc;
+		let count= input.match(/\w+/g);
+		res=count.length;
+		let output2= document.getElementById('output2').innerHTML="Total Words =" +res;
+	}
+</script>
+
+</body>
+</html>
